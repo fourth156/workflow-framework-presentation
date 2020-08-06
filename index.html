@@ -8,16 +8,131 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<style>
+			.no-vertical-center {
+				top: 0 !important;
+			}
+			.full-height {
+				height: 100vh !important;
+			}
+			.no-text-center {
+				text-align: start !important;
+			}
+			.block-container {
+				display: flex;
+				margin-top: 10vh;
+			}
+			.block {
+				flex: 1 0 50%;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>Workflow Framework Use Cases</h2>
+					<h2>In The Global Fund Project</h2>
+				</section>
+				<section class="no-text-center">
+					<h2 style="text-align: center !important;">Business Requirement</h2>
+					<p class="fragment">Complicated workflows with a lot of tasks assigned</p>
+					<p class="fragment">Complicated task forms</p>
+					<p class="fragment">Read data from form => generate word documentt</p>
+					<p class="fragment">Read data from previous tasks for information displayed on new tasks</p>
+					<p class="fragment">HIGH PERFORMANCE AND LOW LATENCY</p>
+				</section>
+				<section class='no-vertical-center full-height'>
+					<h2>Available options</h2>
+					<div style='display: flex; justify-content: space-evenly; margin-top: 15vh;'>
+						<div class="fragment">
+							<img style="width: auto; height: 100px;" src="https://nintexfromthetrenches.com/wp-content/uploads/2018/10/NO365.jpg" alt="">
+							<div>Nintex O365</div>
+						</div>
+						<div class="fragment">
+							<img style="width: auto; height: 100px;" src="https://i.pcmag.com/imagery/reviews/05Iapm524ds0XkQylOcVWEZ-11.fit_scale.size_1028x578.v_1569473520.jpg" alt="">
+							<div>Nintex Cloud Workflow</div>
+						</div>
+						<div class="fragment">
+							<img style="width: auto; height: 100px;" src="https://store-images.s-microsoft.com/image/apps.30829.13653585099021147.79fa13b5-5027-46bb-b142-f6845fcab5ce.d56aa189-0e96-435d-b2ea-946f3688168f" alt="">
+							<div>Microsoft Flow</div>
+						</div>
+					</div>
+				</section>
+				<section class='no-vertical-center full-height'>
+					<h2 style="text-align: center !important;">Nintex O365</h2>
+					<div class="block-container">
+						<div class="block fragment">
+							<h3>Advantages</h3>
+							<p class="fragment">Built-in functionalities</p>
+							<p class="fragment">No learning effort required</p>
+						</div>
+						<div class="block fragment fade-down" style="border-left: 5px solid grey">
+							<h3>Disadvantages</h3>
+							<p class="fragment">SLOW</p>
+							<p class="fragment">Triggers are not reliable</p>
+						</div>
+					</div>
+				</section>
+				<section class='no-vertical-center full-height'>
+					<h2 style="text-align: center !important;">Nintex Cloud Workflow</h2>
+					<div class="block-container">
+						<div class="block fragment">
+							<h3>Advantages</h3>
+							<p class="fragment">Really fast</p>
+							<p class="fragment">Easily connect to Nintex O365</p>
+						</div>
+						<div class="block fragment fade-down" style="border-left: 5px solid grey">
+							<h3>Disadvantages</h3>
+							<p class="fragment">Task assignment</p>
+							<p class="fragment">Lack of functionalities</p>
+							<p class="fragment">Manual import/export</p>
+						</div>
+					</div>
+				</section>
+				<section class='no-vertical-center full-height'>
+					<h2 style="text-align: center !important;">Flow</h2>
+					<div class="block-container">
+						<div class="block fragment">
+							<h3>Advantages</h3>
+							<p class="fragment">Really fast</p>
+							<p class="fragment">Easily connect to SPO</p>
+						</div>
+						<div class="block fragment fade-down" style="border-left: 5px solid grey">
+							<h3>Disadvantages</h3>
+							<p class="fragment">Task assignment</p>
+							<p class="fragment">No task form</p>
+						</div>
+					</div>
+				</section>
+				<section class='full-height'>
+					<h2>Solution 1:</h2>
+					<h2>Nintex O365</h2>
+					<p class="fragment">Reuse task forms</p>
+					<p class="fragment">Workflow designer is really slow</p>
+					<p class="fragment">Poor performance => need a better solution</p>
+				</section>
+				<section class='full-height'>
+					<h2>Solution 2: </h2>
+					<h2>Nintex O365 + NWC + Web Service</h2>
+					<p class="fragment">O365 workflow triggers cloud workflow</p>
+					<p class="fragment">Web service is responsible for task handling</p>
+					<p class="fragment">Cleaner form by using NWC form</p>
+					<p class="fragment">But, workflow triggers are not reliable</p>
+					<p class="fragment">=> need a better solution</p>
+				</section>
+				<section class='full-height'>
+					<h2>Solution 3: </h2>
+					<h2>NWC + Web Service</h2>
+					<p class="fragment">Web Service handle almost everything</p>
+					<p class="fragment">Performance is really really good</p>
+					<p class="fragment">Issues with SPO connection due to many API calls</p>
+					<p class="fragment">A lot of things to take care of </p>
+				</section>
 			</div>
 		</div>
 
@@ -31,7 +146,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				pdfSeparateFragments: false,
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
